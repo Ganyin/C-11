@@ -1,7 +1,6 @@
 
 #include <memory>
 #include <typeindex>
-#include <iostream>
 #include <string.h>
 
 struct Any
@@ -57,7 +56,7 @@ public:
 	{
 		if(!Is<U>())
 		{
-            std::cout << "can not cast " << typeid(U).name() << " to " << m_tpIndex.name() << std::endl;
+//            std::cout << "can not cast " << typeid(U).name() << " to " << m_tpIndex.name() << std::endl;
             throw std::bad_cast();
 		}
 
