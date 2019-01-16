@@ -22,7 +22,7 @@ public:
     struct args
     {
         static_assert ( I < arity, "index is out of range, index must less than sizeof Args");
-        using type = typename std::tuple_element<I, std::tuple<Args...>>();
+        using type = typename std::tuple_element<I, std::tuple<Args...>>::type;
     };
 };
 
@@ -47,6 +47,8 @@ FUNCTION_TRAITS(const volatile)
 template<typename Callable>
 struct function_traits : function_traits<decltype(&Callable::operator())>{};
 
+//将函数转换std::fucntion或者函数指针
+
 template <typename Function>
 typename function_traits<Function>::stl_function_type to_function(const Function& lambda)
 {
@@ -64,4 +66,3 @@ typename function_traits<Function>::pointer to_function_pointer(const Function& 
 {
     return static_cast<typename function_traits<Function>::pointer>(lambda);
 }
-
