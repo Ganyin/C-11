@@ -49,6 +49,11 @@ void testFunctionTraits()
 }
 //----------function_traits²âÊÔ´úÂë------------
 
+
+//----------viarant²âÊÔ´úÂë------------
+
+//----------viarant²âÊÔ´úÂë------------
+
 int main()
 {
     Any n;
